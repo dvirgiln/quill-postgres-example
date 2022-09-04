@@ -12,6 +12,14 @@ val commonDependencies: Seq[ModuleID] = Seq(
 
 val log4j : Seq[ModuleID] = Seq("log4j" % "log4j" % "1.2.17")
 
+val circeVersion = "0.14.1"
+
+libraryDependencies ++= Seq(
+  "io.circe" %% "circe-core",
+  "io.circe" %% "circe-generic",
+  "io.circe" %% "circe-parser"
+).map(_ % circeVersion)
+
 val root = (project in file(".")).
   settings(
     libraryDependencies ++= commonDependencies,

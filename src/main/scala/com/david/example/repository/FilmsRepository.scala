@@ -1,10 +1,11 @@
-package com.david.example
+package com.david.example.repository
+
 import scala.concurrent.{ExecutionContext, Future}
 
 import com.david.example.Model.Film
 import com.david.example.ctx.CustomSqlContext
 
-class ExampleRepository(implicit ctx: CustomSqlContext) {
+class FilmsRepository(implicit ctx: CustomSqlContext) {
     import ctx._
 
   def add(film: Film)(implicit executionContext: ExecutionContext): Future[Long] = {
@@ -23,6 +24,6 @@ class ExampleRepository(implicit ctx: CustomSqlContext) {
 }
 
 
-object ExampleRepository{
-  def apply()(implicit ctx: CustomSqlContext) = new ExampleRepository()
+object FilmsRepository{
+  def apply()(implicit ctx: CustomSqlContext) = new FilmsRepository()
 }
