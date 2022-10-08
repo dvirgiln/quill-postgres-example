@@ -6,7 +6,8 @@ import scala.concurrent.duration.Duration
 
 import com.david.example.Model.{Cinema, CinemaExtra, Film}
 import com.david.example.ctx.CustomSqlContext
-import com.david.example.repository.{CinemasRepository, FilmsRepository}
+import com.david.example.repository.jasync.{CinemasRepository, FilmsRepository}
+
 object Main extends App {
   implicit val ctx = new CustomSqlContext
   import scala.concurrent.ExecutionContext.Implicits.global
@@ -23,9 +24,9 @@ object Main extends App {
 
   val cinemasRepository = CinemasRepository()
 
-  val curzonExtra = CinemaExtra("London", "shoreditch Park 22", "+443433333232", 4)
-  val curzonShoreditch = Cinema(None, "Curzon Shoreditch", curzonExtra)
+//  val curzonExtra = CinemaExtra("London", "shoreditch Park 22", "+443433333232", 4)
+//  val curzonShoreditch = Cinema(None, "Curzon Shoreditch", curzonExtra)
 
-  Await.result(cinemasRepository.add(curzonShoreditch), Duration.Inf)
+//  Await.result(cinemasRepository.add(curzonShoreditch), Duration.Inf)
   println(films)
 }

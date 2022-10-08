@@ -1,4 +1,4 @@
-package com.david.example.repository
+package com.david.example.repository.jasync
 
 import scala.concurrent.{ExecutionContext, Future}
 
