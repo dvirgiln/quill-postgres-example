@@ -1,12 +1,12 @@
-package com.david.example
+package com.david.example.jasync
 
 import java.util.Date
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
 
-import com.david.example.Model.{Cinema, CinemaExtra, Film}
-import com.david.example.ctx.CustomSqlContext
-import com.david.example.repository.jasync.{CinemasRepository, FilmsRepository}
+import com.david.example.Model.Film
+import com.david.example.jasync.ctx.CustomSqlContext
+import com.david.example.jasync.repository.{CinemasRepository, FilmsRepository}
 
 object Main extends App {
   implicit val ctx = new CustomSqlContext

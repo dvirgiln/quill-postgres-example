@@ -1,9 +1,7 @@
-package com.david.example.ctx
+package com.david.example.jasync.ctx
 
 import com.david.example.Model.{Cinema, Film}
-import com.github.jasync.sql.db.RowData
-import io.getquill.PostgresJAsyncContext
-import io.getquill.Literal
+import io.getquill.{Literal, PostgresJAsyncContext}
 class CustomSqlContext extends PostgresJAsyncContext(Literal, "testPostgresDB"){
 
   implicit val filmsSchemaMeta = schemaMeta[Film]("films")

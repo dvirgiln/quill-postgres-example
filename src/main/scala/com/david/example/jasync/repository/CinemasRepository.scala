@@ -1,9 +1,9 @@
-package com.david.example.repository.jasync
+package com.david.example.jasync.repository
 
 import scala.concurrent.{ExecutionContext, Future}
 
 import com.david.example.Model.Cinema
-import com.david.example.ctx.CustomSqlContext
+import com.david.example.jasync.ctx.CustomSqlContext
 
 class CinemasRepository (implicit ctx: CustomSqlContext) {
     import ctx._
